@@ -1,0 +1,10 @@
+.block{
+    height: max-content;
+    width: 600px;
+    margin: auto;
+    padding: 10px;
+    border: 2px solid black;
+    background-image:url('../img/demo.jfif');
+
+}
+

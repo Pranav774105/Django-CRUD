@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+    {% block title %}
+        <title>Order Form</title>
+    {% endblock %}
+
+{% block content1 %}
+    <div class="block mt-50">
+        <center><h1>ORDER FORM</h1></center>
+        <form  method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <Input type="submit" class="btn btn-outline-success col-5">
+            <input type="reset" class="btn btn-outline-primary float-right col-5" >
+        </form>
+    </div>
+{% endblock %}

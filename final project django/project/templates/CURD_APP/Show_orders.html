@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+    {% block titel %}
+        <title>SHOW ORDERS</title>
+    {% endblock %}
+
+{% block content1 %}
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Delivary Date</th>
+                    <th>Delivary Address</th>
+                    <th>Payment Mode</th>
+                    <th colspan="2">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in data %}
+                    <tr>
+                        <td>{{ i.oid }}</td>
+                        <td>{{ i.prod_name }}</td>
+                        <td>{{ i.prod_quan }}</td>
+                        <td>{{ i.del_date }}</td>
+                        <td>{{ i.del_address }}</td>
+                        <td>{{ i.payment_mode }}</td>
+                        <td><a href="{% url 'update_url' i.oid %}" class="btn btn-outline-secondary">Update</a></td>
+                        <td><a href="{% url 'delete_url' i.oid %}" class="btn btn-outline-danger">Delete</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+ <a href="{% url 'order_url' %}">
+        <button type="button" class="btn btn-warning">Back to Add Page</button>
+    </a>
+{% endblock %}

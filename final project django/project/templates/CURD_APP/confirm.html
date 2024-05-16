@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmation Form</title>
+</head>
+<body>
+                <h1>DO YOU REALLY WAN'T TO DELETE THIS RECORD</h1>
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="submit" value="yes">
+                    <a href="{% url 'show_orders_url' %}"><input type="button" value="no"></a>
+                </form>
+</body>
+</html>
